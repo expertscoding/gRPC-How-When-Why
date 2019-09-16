@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "WMTServer";
+
+package Windmill;
+
+service WindmillFarm {
+  rpc ListRequest(WindmillListRequest) returns (WindmillListResponse);
+}
+
+message WindmillListRequest {}
+
+message WindmillListResponse {
+  int32 TotalCount = 1;
+  double AvgPowerGeneratedLastHour = 2;
+  repeated WindmillInfo Windmills = 3;
+}
+
+message WindmillInfo {
+	string WindmillId = 1;
+
+	double AvgPowerGeneratedLastHour = 2;
+}

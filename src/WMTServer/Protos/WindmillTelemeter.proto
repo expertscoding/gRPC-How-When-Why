@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "WMTServer";
+
+package Windmill;
+
+// The service definition.
+service WindmillTelemeter {
+  // Sends Telemetry
+  rpc SendTelemetry (WindmillInfoRequest) returns (WindmillTelemetryReply);
+}
+
+message WindmillInfoRequest {
+  string WindmillId = 1;
+}
+
+// The response message containing the greetings.
+message WindmillTelemetryReply {
+  string message = 1;
+}
