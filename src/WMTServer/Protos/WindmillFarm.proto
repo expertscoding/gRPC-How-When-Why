@@ -5,19 +5,30 @@ option csharp_namespace = "WMTServer";
 package Windmill;
 
 service WindmillFarm {
-  rpc ListRequest(WindmillListRequest) returns (WindmillListResponse);
+  rpc RequestList (WindmillListRequest) returns (WindmillListResponse);
+  rpc RequestWindmillStatus (WindmillStatusRequest) returns (WindmillInfo);
 }
 
 message WindmillListRequest {}
 
 message WindmillListResponse {
   int32 TotalCount = 1;
-  double AvgPowerGeneratedLastHour = 2;
-  repeated WindmillInfo Windmills = 3;
+
+  double AvgPowerGeneratedLastMinute = 2;
+
+  double AvgPowerGeneratedLastHour = 3;
+
+  repeated WindmillInfo Windmills = 4;
+}
+
+message WindmillStatusRequest {
+	string WindmillId = 1;
 }
 
 message WindmillInfo {
 	string WindmillId = 1;
 
-	double AvgPowerGeneratedLastHour = 2;
+	double AvgPowerGeneratedLastMinute = 2;
+
+	double AvgPowerGeneratedLastHour = 3;
 }

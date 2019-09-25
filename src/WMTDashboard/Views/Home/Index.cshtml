@@ -1,0 +1,15 @@
+﻿@model List<WMTServer.WindmillInfo>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Windmill Farm Dashboard</h1>
+    <p>Windmills in the farm:</p>
+    <ul>
+        @foreach (var windmill in Model)
+        {
+        <li>@windmill.WindmillId - Last Minute: @windmill.AvgPowerGeneratedLastMinute.ToString("F") - Last Hour: @windmill.AvgPowerGeneratedLastHour.ToString("F")</li>
+        }
+    </ul>
+</div>

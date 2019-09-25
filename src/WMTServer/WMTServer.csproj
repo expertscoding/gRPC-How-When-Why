@@ -5,11 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Protos\WindmillFarm.proto" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Protobuf Include="Protos\WindmillFarm.proto" GrpcServices="Both" />
+    <Protobuf Include="Protos\WindmillFarm.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\WindmillTelemeter.proto" GrpcServices="Server" />
   </ItemGroup>
 

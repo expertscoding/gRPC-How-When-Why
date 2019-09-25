@@ -6,15 +6,38 @@ package Windmill;
 
 // The service definition.
 service WindmillTelemeter {
-  // Sends Telemetry
-  rpc SendTelemetry (WindmillInfoRequest) returns (WindmillTelemetryReply);
+  // Sends Telemetry.
+  rpc RequestTelemetry (WindmillInfoRequest) returns (WindmillTelemetryResponse);
 }
 
 message WindmillInfoRequest {
   string WindmillId = 1;
 }
 
-// The response message containing the greetings.
-message WindmillTelemetryReply {
-  string message = 1;
+// The response message containing actual values about the windmill.
+message WindmillTelemetryResponse {
+	string WindmillId = 1;
+
+	string EventTime = 2;
+
+	double WindSpeed = 3;
+
+	int32 RPM = 4;
+
+	Windmill.WindDirection WindDirection = 5;
+
+	double PowerOutput = 6;
+
+	double VoltageOutput = 7;
+}
+
+enum WindDirection {
+	N = 0;
+	NE = 1;
+	E = 2;
+	SE = 3;
+	S = 4;
+	SW = 5;
+	W = 6;
+	NW = 7;
 }
