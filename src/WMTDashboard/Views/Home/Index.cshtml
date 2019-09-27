@@ -6,10 +6,29 @@
 <div class="text-center">
     <h1 class="display-4">Windmill Farm Dashboard</h1>
     <p>Windmills in the farm:</p>
-    <ul>
-        @foreach (var windmill in Model)
-        {
-        <li>@windmill.WindmillId - Last Minute: @windmill.AvgPowerGeneratedLastMinute.ToString("F") - Last Hour: @windmill.AvgPowerGeneratedLastHour.ToString("F")</li>
-        }
-    </ul>
+</div>
+<div>
+    <table class="table  table-striped">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th class="text-center" scope="col" colspan="2">Average Power</th>
+            </tr>
+            <tr>
+                <th scope="col">Windmill Id</th>
+                <th class="text-center" scope="col">Last minute</th>
+                <th class="text-center" scope="col">Last hour</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var windmill in Model)
+            {
+                <tr>
+                    <th scope="row">@windmill.WindmillId</th>
+                    <td class="text-center">@windmill.AvgPowerGeneratedLastMinute.ToString("F") W/h</td>
+                    <td class="text-center">@windmill.AvgPowerGeneratedLastHour.ToString("F") W/h</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

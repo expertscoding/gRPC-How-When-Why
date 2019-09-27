@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "Enums.proto";
 
 option csharp_namespace = "WMTServer";
 
@@ -29,15 +30,4 @@ message WindmillTelemetryResponse {
 	double PowerOutput = 6;
 
 	double VoltageOutput = 7;
-}
-
-enum WindDirection {
-	N = 0;
-	NE = 1;
-	E = 2;
-	SE = 3;
-	S = 4;
-	SW = 5;
-	W = 6;
-	NW = 7;
 }

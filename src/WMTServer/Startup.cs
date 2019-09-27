@@ -1,9 +1,11 @@
-﻿using Grpc.AspNetCore.Server;
+﻿using System.Text;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using WMTServer.Mock;
 
 namespace WMTServer
@@ -18,6 +20,27 @@ namespace WMTServer
             services.AddTransient<WindmillsDataReader>();
             services.AddHostedService<DataGeneratorService>();
 
+/*
+            services.AddAuthentication().AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidIssuers = new []{"Galicia NetConf"},
+                    ValidateAudience = true,
+                    ValidAudiences = new []{"gRPCers"},
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("wOfwFngeaL5ucSqhhuY4W96XjXr9F2o4"))
+                };
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin", policy => policy.Requirements.Add(new ClaimsAuthorizationRequirement("role", new []{"Administrator"})));
+                options.AddPolicy("NonAdmin", policy => policy.Requirements.Add(new ClaimsAuthorizationRequirement("role", new []{"User"})));
+            });
+*/
+
             services.AddGrpc();
         }
 
@@ -30,6 +53,9 @@ namespace WMTServer
             }
 
             app.UseRouting();
+
+            //app.UseAuthentication();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

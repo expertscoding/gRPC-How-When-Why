@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29230.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMTServer", "WMTServer\WMTServer.csproj", "{BDB887C3-91F7-4C5F-B06E-06C1F581BF3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMTDashboard", "WMTDashboard\WMTDashboard.csproj", "{6DADEFB3-E01C-4775-98C8-CBCA9378FCB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMTDashboard", "WMTDashboard\WMTDashboard.csproj", "{6DADEFB3-E01C-4775-98C8-CBCA9378FCB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

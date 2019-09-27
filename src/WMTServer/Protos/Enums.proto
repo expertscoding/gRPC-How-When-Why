@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "WMTServer";
+package Windmill;
+
+enum WindDirection {
+	N = 0;
+	NE = 1;
+	E = 2;
+	SE = 3;
+	S = 4;
+	SW = 5;
+	W = 6;
+	NW = 7;
+}
+
+enum WindmillStatus {
+	Disconnected = 0;
+	Starting = 1;
+	Connected = 2;
+	Stopping = 3;
+}

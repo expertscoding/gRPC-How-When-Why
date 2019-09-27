@@ -5,12 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\WindmillFarm.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos\WindmillTelemeter.proto" GrpcServices="Server" />
+    <None Remove="Protos\Enums.proto" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="0.2.23-pre2" />
+    <Protobuf Include="Protos\Enums.proto" />
+    <Protobuf Include="Protos\WindmillFarm.proto" GrpcServices="Server" AdditionalImportDirs="Protos\" />
+    <Protobuf Include="Protos\WindmillTelemeter.proto" GrpcServices="Server" AdditionalImportDirs="Protos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.23.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
   </ItemGroup>
 
 </Project>

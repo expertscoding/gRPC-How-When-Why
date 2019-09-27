@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "Enums.proto";
 
 option csharp_namespace = "WMTServer";
 
@@ -7,6 +8,7 @@ package Windmill;
 service WindmillFarm {
   rpc RequestList (WindmillListRequest) returns (WindmillListResponse);
   rpc RequestWindmillStatus (WindmillStatusRequest) returns (WindmillInfo);
+  rpc DisconnectFromGrid (.Windmill.WindmillStatusRequest) returns (WindmillInfo);
 }
 
 message WindmillListRequest {}
@@ -31,4 +33,6 @@ message WindmillInfo {
 	double AvgPowerGeneratedLastMinute = 2;
 
 	double AvgPowerGeneratedLastHour = 3;
+
+	Windmill.WindmillStatus Status = 4;
 }
