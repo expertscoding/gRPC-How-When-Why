@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMTServer", "WMTServer\WMTS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMTDashboard", "WMTDashboard\WMTDashboard.csproj", "{6DADEFB3-E01C-4775-98C8-CBCA9378FCB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMTLogger", "WMTLogger\WMTLogger.csproj", "{1666E89E-5831-448D-B43C-9D1864CA23C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6DADEFB3-E01C-4775-98C8-CBCA9378FCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DADEFB3-E01C-4775-98C8-CBCA9378FCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DADEFB3-E01C-4775-98C8-CBCA9378FCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1666E89E-5831-448D-B43C-9D1864CA23C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1666E89E-5831-448D-B43C-9D1864CA23C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1666E89E-5831-448D-B43C-9D1864CA23C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1666E89E-5831-448D-B43C-9D1864CA23C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

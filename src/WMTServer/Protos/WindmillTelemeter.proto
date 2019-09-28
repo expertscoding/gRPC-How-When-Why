@@ -9,6 +9,7 @@ package Windmill;
 service WindmillTelemeter {
   // Sends Telemetry.
   rpc RequestTelemetry (WindmillInfoRequest) returns (WindmillTelemetryResponse);
+  rpc RequestTelemetryStream (WindmillInfoRequest) returns (stream WindmillTelemetryResponse);
 }
 
 message WindmillInfoRequest {

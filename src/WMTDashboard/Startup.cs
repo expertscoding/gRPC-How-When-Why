@@ -1,3 +1,4 @@
+using System;
 using Grpc.Net.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,7 +21,8 @@ namespace WMTDashboard
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped(sp => new WindmillFarm.WindmillFarmClient(GrpcChannel.ForAddress(Configuration["WindmillServiceEndpoint"])));
+            services.AddGrpcClient<WindmillFarm.WindmillFarmClient>(options => options.Address = new Uri(Configuration["WindmillServiceEndpoint"]));
+            //services.AddScoped(sp => new WindmillFarm.WindmillFarmClient(GrpcChannel.ForAddress(Configuration["WindmillServiceEndpoint"])));
             services.AddControllersWithViews();
         }
 
@@ -41,8 +43,6 @@ namespace WMTDashboard
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

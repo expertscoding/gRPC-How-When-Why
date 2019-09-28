@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.9.2" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.23.2" />
+    <PackageReference Include="Grpc.Tools" Version="2.24.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Protos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\WMTServer\Protos\Enums.proto" GrpcServices="Client">
+      <Link>Protos\Enums.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\WMTServer\Protos\WindmillFarm.proto" GrpcServices="Client">
+      <Link>Protos\WindmillFarm.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\WMTServer\Protos\WindmillTelemeter.proto" GrpcServices="Client">
+      <Link>Protos\WindmillTelemeter.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+
+</Project>

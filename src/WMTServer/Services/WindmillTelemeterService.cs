@@ -24,12 +24,19 @@ namespace WMTServer
 
         }
 
-        //public override Task<WindmillTelemetryResponse> SendTelemetry(WindmillInfoRequest request, ServerCallContext context)
-        //{
-        //    return Task.FromResult(new WindmillTelemetryResponse
-        //    {
-        //        Message = "Hello " + request.WindmillId
-        //    });
-        //}
+        public override async Task RequestTelemetryStream(WindmillInfoRequest request, IServerStreamWriter<WindmillTelemetryResponse> responseStream, ServerCallContext context)
+        {
+            while (!context.CancellationToken.IsCancellationRequested)
+            {
+                //TODO add business logic to receive last event only once
+                var last = windmillsDataReader.GetTelemetryValues(Guid.Parse(request.WindmillId)).LastOrDefault();
+                _logger.LogInformation($"Sending windmill info for {last?.WindmillId} at {last?.EventTime}.");
+
+                await responseStream.WriteAsync(last);
+
+                // Gotta look busy
+                await Task.Delay(1000);
+            }
+        }
     }
 }
