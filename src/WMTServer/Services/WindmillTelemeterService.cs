@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Grpc.Core;
@@ -34,7 +34,7 @@ namespace WMTServer
 
                 await responseStream.WriteAsync(last);
 
-                // Gotta look busy
+                // simulemos más trabajo
                 await Task.Delay(1000);
             }
         }

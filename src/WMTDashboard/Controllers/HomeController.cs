@@ -25,7 +25,15 @@ namespace WMTDashboard.Controllers
             {
                 {
                     "Authorization",
-                    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJHYWxpY2lhIE5ldENvbmYiLCJpYXQiOjE1Njk1ODM3ODIsImV4cCI6MTYwMTExOTc4MiwiYXVkIjoiZ1JQQ2VycyIsInN1YiI6Im1hbnVlbC52aWxhY2hhbkBleHBlcnRzY29kaW5nLmVzIiwiUm9sZSI6IkFkbWluaXN0cmF0b3IifQ.lIBqaGckTF9moSeMdVepyyc4KL71ubfKzuDI0CQhfJo"
+
+                    //Role Other
+                    //"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJFeHBlcnRzQ29kaW5nIERlbW9zIiwiaWF0IjoxNTc0ODE1MTg3LCJleHAiOjE2MDY0Mzc4MDgsImF1ZCI6ImdSUENlcnMiLCJzdWIiOiJtYW51ZWwudmlsYWNoYW5AZXhwZXJ0c2NvZGluZy5lcyIsIlJvbGUiOiJPdGhlciJ9.Wm79O1SMqsPHI-QpWbOdgxZP_-Abe2U1SpqXEwwVab0"
+
+                    //Role User
+                    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJFeHBlcnRzQ29kaW5nIERlbW9zIiwiaWF0IjoxNTc0ODE1MTg3LCJleHAiOjE2MDY0Mzc4MDgsImF1ZCI6ImdSUENlcnMiLCJzdWIiOiJtYW51ZWwudmlsYWNoYW5AZXhwZXJ0c2NvZGluZy5lcyIsIlJvbGUiOiJVc2VyIn0.EFYPLRt9STgu46ZkdQ9yGq5seTAZOsf9N71fMtPpYhk"
+
+                    //Role Administrator
+                    //"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJFeHBlcnRzQ29kaW5nIERlbW9zIiwiaWF0IjoxNTc0ODE1MTg3LCJleHAiOjE2MDY0Mzc4MDgsImF1ZCI6ImdSUENlcnMiLCJzdWIiOiJtYW51ZWwudmlsYWNoYW5AZXhwZXJ0c2NvZGluZy5lcyIsIlJvbGUiOiJBZG1pbmlzdHJhdG9yIn0.pJOfeoAjypIel1EHBHxzSVMBgilQbqBt4gZ6mSXlao8"
                 }
             };
 

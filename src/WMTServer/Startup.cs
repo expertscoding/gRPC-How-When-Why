@@ -21,14 +21,15 @@ namespace WMTServer
             services.AddHostedService<DataGeneratorService>();
 
 /*
+            //Using online tool: http://jwtbuilder.jamiekurtz.com/
             services.AddAuthentication().AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
-                    ValidIssuers = new []{"Galicia NetConf"},
+                    ValidIssuers = new[] { "ExpertsCoding Demos" },
                     ValidateAudience = true,
-                    ValidAudiences = new []{"gRPCers"},
+                    ValidAudiences = new[] { "gRPCers" },
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("wOfwFngeaL5ucSqhhuY4W96XjXr9F2o4"))
                 };
@@ -36,8 +37,8 @@ namespace WMTServer
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Admin", policy => policy.Requirements.Add(new ClaimsAuthorizationRequirement("role", new []{"Administrator"})));
-                options.AddPolicy("NonAdmin", policy => policy.Requirements.Add(new ClaimsAuthorizationRequirement("role", new []{"User"})));
+                options.AddPolicy("Admin", policy => policy.Requirements.Add(new ClaimsAuthorizationRequirement("role", new[] { "Administrator" })));
+                options.AddPolicy("NonAdmin", policy => policy.Requirements.Add(new ClaimsAuthorizationRequirement("role", new[] { "User" })));
             });
 */
 
@@ -54,8 +55,10 @@ namespace WMTServer
 
             app.UseRouting();
 
-            //app.UseAuthentication();
-            //app.UseAuthorization();
+/*
+            app.UseAuthentication();
+            app.UseAuthorization();
+*/
 
             app.UseEndpoints(endpoints =>
             {

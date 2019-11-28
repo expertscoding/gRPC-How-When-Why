@@ -33,7 +33,7 @@ namespace WMTLogger
         private static async Task TelemetryStreaming(Guid guid, GrpcChannel channel)
         {
             var cts = new CancellationTokenSource();
-            cts.CancelAfter(TimeSpan.FromSeconds(57));
+            cts.CancelAfter(TimeSpan.FromSeconds(27));
 
             var client = new WindmillTelemeter.WindmillTelemeterClient(channel);
 
