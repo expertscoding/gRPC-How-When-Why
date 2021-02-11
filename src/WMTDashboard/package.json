@@ -9,6 +9,6 @@
   "author": "Experts Coding",
   "license": "ISC",
   "dependencies": {
-    "apexcharts": "^3.8.6"
+    "apexcharts": "^3.24.0"
   }
 }
